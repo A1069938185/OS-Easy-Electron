@@ -1,0 +1,35 @@
+.expand {
+  position: relative;
+}
+.expand-trigger {
+  background-color: transparent;
+}
+.expand-trigger:focus + .expand-options {
+  display: block;
+}
+.expand-options {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  min-width: 90px;
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 3px gainsboro;
+  border-radius: 8px;
+  min-height: 40px;
+}
+.expand-options li {
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 8px;
+}
+.expand-options li img {
+  height: 18px;
+  margin-right: 8px;
+}
+.expand-options li:hover {
+  background-color: white;
+  opacity: 0.85;
+}

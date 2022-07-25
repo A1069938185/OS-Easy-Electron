@@ -1,0 +1,183 @@
+.card {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  background-color: rgb(253, 253, 253);
+  border-radius: 6px;
+  transition: all 0.2s;
+  margin: 5px 0;
+  & > img {
+    height: 28px;
+    margin-left: 20px;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    span {
+      cursor: default;
+    }
+    .name {
+      font-size: 14px;
+    }
+    .introduce {
+      font-size: 12px;
+      color: rgb(85, 85, 85);
+    }
+  }
+  .more {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 16px;
+    & > img {
+      transition: all 0.2s;
+      height: 16px;
+      margin-left: 16px;
+    }
+    .rotate_90 {
+      transform: rotateZ(90deg) !important;
+    }
+    span {
+      font-size: 12px;
+      color: rgb(82, 82, 82);
+    }
+    .btnlist {
+      display: flex;
+      width: 60%;
+      justify-content: space-evenly;
+    }
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.664);
+    & .select {
+      background-color: rgba(255, 255, 255, 0.664);
+    }
+  }
+}
+.card + .details,
+.option > .details {
+  overflow: hidden;
+  transition: all 0.2s ease;
+  // height: auto;
+  margin-top: -2px;
+  width: 100%;
+  background-color: rgb(253, 253, 253);
+  border-radius: 6px;
+  transform-origin: top;
+  // padding: 16px 0;
+  .infobox {
+    padding: 12px 0;
+    margin-left: 60px;
+    .info {
+      display: flex;
+      margin-bottom: 12px;
+      &-key {
+        width: 15%;
+        font-size: 14px;
+      }
+      &-value {
+        font-size: 14px;
+        color: gray;
+        width: 85%;
+      }
+    }
+  }
+  .radiobox {
+    margin-left: 60px;
+    .radio {
+      padding: 16px 0;
+      display: flex;
+      &-option {
+        margin-right: 16px;
+        height: 32px;
+        width: 24px;
+      }
+      &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .name {
+          font-size: 14px;
+        }
+        .introduce {
+          font-size: 13px;
+          color: rgb(82, 82, 82);
+        }
+        .method {
+          font-size: 13px;
+          color: rgb(71, 58, 255);
+        }
+      }
+    }
+  }
+  radio ~ ul:first-of-type {
+    border-top: 1px solid gainsboro;
+  }
+  .button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 16px;
+    padding: 12px 0;
+    button {
+      height: 32px;
+      background: white;
+      border: 1px solid gainsboro;
+      border-radius: 5px;
+      transition: all 0.05s;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .optionsbox {
+    input[type="checkbox"] {
+      height: 18px;
+      width: 18px;
+    }
+    li {
+      display: flex;
+      padding-left: 60px;
+      padding-bottom: 12px;
+      padding-top: 12px;
+      height: 40px;
+      align-items: center;
+      border-top: 1px solid gainsboro;
+    }
+    .checkboxli {
+      input {
+        height: 18px;
+      }
+      span {
+        font-size: 16px;
+        margin-left: 16px;
+      }
+      &:first-child {
+        border-top: unset;
+      }
+    }
+    .cardli {
+      .card {
+        padding: 12px 0 60px;
+        padding-left: 60px;
+        padding-bottom: 12px;
+        min-height: 32px;
+        margin: 0;
+        .title {
+          margin: 0;
+        }
+      }
+    }
+    .btnli {
+      justify-content: space-between;
+      span {
+        font-size: 16px;
+      }
+      btn {
+        margin-right: 24px;
+      }
+    }
+  }
+}

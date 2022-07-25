@@ -1,0 +1,18 @@
+<div class="headcard update">
+  <div class="headcard-img">
+    <img class="img1" src="./images/update-status.png" />
+    <img class="img2" src="./images/success.png" />
+  </div>
+  <div class="headcard-info">
+    <span class="text">你使用的是最新版本</span>
+    <span class="paratext">{{checkTime}}</span>
+  </div>
+  <div class="headcard-more">
+    <button class="headcard-more_btn" ng-click="changeTime()">检查更新</button>
+  </div>
+</div>
+<div class="option">
+  <p>更多选项</p>
+  <card card="card" ng-repeat="card in cardList"></card>
+</div>
+<help></help>

@@ -1,0 +1,58 @@
+.switch {
+  display: flex;
+  align-items: center;
+  --h: 30px;
+  --w: 60px;
+}
+.switch label {
+  font-size: 12px;
+  color: #525252;
+  margin-right: 8px;
+}
+.switch-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--w);
+  height: var(--h);
+  position: relative;
+}
+.switch-box input[type="checkbox"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: 99;
+}
+.switch-box .trigger {
+  position: absolute;
+  cursor: pointer;
+  text-indent: -9999px;
+  width: var(--w);
+  height: var(--h);
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  z-index: 0;
+}
+.switch-box .trigger:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: calc(var(--h) - 4px);
+  height: calc(var(--h) - 4px);
+  background: #fff;
+  border-radius: var(--h);
+  transition: 0.3s;
+}
+.switch-box input:checked + .trigger {
+  background: #bada55;
+}
+.switch-box input:checked + .trigger:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+.switch-box input:active + .trigger:after {
+  width: calc(var(--w) * 0.85);
+}

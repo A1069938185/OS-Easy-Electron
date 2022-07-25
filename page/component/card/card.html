@@ -1,0 +1,136 @@
+<!-- 卡片组件 -->
+<div
+  class="card"
+  ng-class="$ctrl.card.disable?'disable':''"
+  ng-click="arrowClick($event)"
+>
+  <!-- 卡片icon -->
+  <img ng-if="$ctrl.card.icon" ng-src="{{$ctrl.card.icon}}" />
+  <!-- 卡片的描述性内容 -->
+  <div class="title">
+    <!-- 标题 -->
+    <span class="name">{{$ctrl.card.title}}</span>
+    <!-- 介绍 -->
+    <span class="introduce">{{$ctrl.card.introduce}}</span>
+    <!-- 如果介绍存在多条则采用数组渲染 -->
+    <span
+      ng-if="$ctrl.card.introduceList"
+      class="introduce"
+      ng-repeat="introduce in $ctrl.card.introduceList"
+      >{{introduce}}</span
+    >
+  </div>
+  <!-- 卡片更多功能模块 -->
+  <div class="more" ng-transclude="more">
+    <!-- 右侧下拉框 -->
+    <down-list
+      ng-if="downList"
+      ng-model="downList.value"
+      ng-change="downList.changeFn()"
+      list="downList.list"
+      size="{{downList.size}}"
+    ></down-list>
+    <!-- 右侧按钮 -->
+    <btn
+      ng-if="button"
+      size="{{button.size}}"
+      color="{{button.color}}"
+      name="{{button.name}}"
+      ng-click="button.clickFn()"
+    ></btn>
+    <!-- 右侧按钮组 -->
+    <div ng-if="btnlist" class="btnlist">
+      <btn
+        size="{{x.size}}"
+        color="{{x.color}}"
+        name="{{x.name}}"
+        ng-click="x.clickFn()"
+        ng-repeat="x in btnlist"
+      ></btn>
+    </div>
+    <!-- 右侧更多操作选项 -->
+    <expand ng-if="expand" options="expand.options"></expand>
+    <!-- 右侧开关 -->
+    <switch
+      ng-if="switch"
+      ng-model="switch.value"
+      label="switch.label"
+    ></switch>
+    <!-- 右侧滑块 -->
+    <slider
+      ng-if="slider"
+      tag="slider.tag"
+      imgs="slider.imgs"
+      value="slider.value"
+    ></slider>
+    <!-- 右侧标签 -->
+    <span ng-if="$ctrl.card.label">{{$ctrl.card.label}}</span>
+    <!-- 右侧右箭头 -->
+    <img ng-if="$ctrl.card.right" src="./images/right.png" alt="" />
+    <!-- 右侧占位图 -->
+    <img
+      ng-if="$ctrl.card.blank"
+      src="./images/right.png"
+      style="opacity: 0"
+      alt=""
+    />
+    <!-- 右侧旋转箭头 -->
+    <img
+      ng-if="$ctrl.card.arrow"
+      src="./images/right.png"
+      style="transform: rotateZ(-90deg)"
+      ng-class="arrowClass?'rotate_90':''"
+      alt=""
+    />
+  </div>
+</div>
+<!-- card拼接的详情卡片 -->
+<div
+  ng-if="$ctrl.card.arrow"
+  class="details"
+  ng-class="arrowClass?'box-hide':''"
+>
+  <!-- 详情信息内容 -->
+  <ul ng-if="details.infobox" class="infobox">
+    <li class="info" ng-repeat="x in details.infobox.list">
+      <span class="info-key">{{x.key}}<span>:</span></span
+      ><span class="info-value">{{x.value}}</span>
+    </li>
+  </ul>
+  <!-- 多选框 -->
+  <radio
+    ng-if="details.radiobox"
+    list="details.radiobox.list"
+    ng-model="details.radiobox.value"
+  ></radio>
+  <!-- 选项盒子 -->
+  <ul ng-if="details.optionsbox" class="optionsbox">
+    <!-- 单选选项 -->
+    <li class="checkboxli" ng-repeat="x in details.optionsbox.checkboxlist">
+      <input type="checkbox" ng-model="x.value" />
+      <span for="{{x.name}}">{{x.name}}</span>
+    </li>
+    <!-- 内嵌二级卡片 -->
+    <card
+      class="cardli"
+      card="x"
+      ng-repeat="x in details.optionsbox.cardlist"
+    ></card>
+    <!-- 按钮选项 -->
+    <li class="btnli" ng-repeat="x in details.optionsbox.btnlist">
+      <span for="{{x.name}}">{{x.name}}</span
+      ><btn
+        size="{{x.button.size}}"
+        color="{{x.button.color}}"
+        name="{{x.button.name}}"
+      ></btn>
+    </li>
+  </ul>
+  <!-- 按钮 -->
+  <btn
+    ng-if="details.button"
+    size="{{details.button.size}}"
+    color="{{details.button.color}}"
+    name="{{details.button.name}}"
+  ></btn>
+</div>

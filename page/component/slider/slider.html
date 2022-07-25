@@ -1,0 +1,8 @@
+<div class="slider">
+  <div class="slider-tag">
+    <span ng-if="$ctrl.tag">{{$ctrl.tag}}</span>
+    <img ng-if="$ctrl.img" ng-src="{{$ctrl.img}}" />
+  </div>
+  <input class="slider-range" ng-model="$ctrl.value" ng-change="change()" type="range" />
+</div>
+

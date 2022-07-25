@@ -1,0 +1,27 @@
+<div class="option">
+  <card
+    card="card"
+    ng-click="onJumpPage(card.jump.crumbs,card.jump.z)"
+    ng-repeat="card in cardList0"
+  ></card>
+</div>
+<div class="option">
+  <p>来自应用和其他发送者的通知</p>
+  <p class="option-order">
+    排序依据：<span>最新</span
+    ><img src="./images/right.png" style="transform: rotateZ(90deg)" alt="" />
+  </p>
+  <card
+    card="card"
+    ng-click="onJumpPage(card.jump.crumbs,card.jump.z)"
+    ng-repeat="card in cardList1"
+  ></card>
+  <div class="details" style="margin-top: 60px;">
+    <ul class="optionsbox">
+      <li class="checkboxli" ng-repeat="x in checkboxlist">
+        <input type="checkbox" ng-model="x.value"/> <span for="{{x.name}}">{{x.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<help></help>

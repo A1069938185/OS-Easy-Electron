@@ -1,0 +1,48 @@
+.power {
+  display: flex;
+}
+.power-show {
+  display: flex;
+  width: 240px;
+  align-items: center;
+  padding: 36px 16px 72px;
+}
+.power-show .percentage {
+  height: 30px;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: right;
+  flex-grow: 1;
+}
+.power-show .battery {
+  --w: 48%;
+  width: 60px;
+  height: 60px;
+  background-image: url(images/battery.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.power-show .battery::after {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: all 0.5s;
+  border-radius: 2px;
+  width: var(--w);
+  height: 28%;
+  top: 22px;
+  left: 13px;
+  background-color: black;
+}
+.power-trend {
+  padding: 0 32px;
+  width: 100%;
+}
+.power-trend #powerHistogram {
+  position: unset !important;
+  width: 100%;
+  height: 150%;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>AngularJS Demo</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="app.css" />
+    <!-- <script type="module" src="./index.js"></script> -->
+  </head>
+  <body ng-hide="closed" >
+    <main ng-class="{maximized,minimized}">
+      <div class="window">
+        <div class="window-nav">
+          <div class="back">
+            <div
+              class="back-img"
+              ng-click="onJumpPage('back')"
+            >
+              <img src="./images/back.png" />
+            </div>
+            <span>设置</span>
+          </div>
+          <div class="icon">
+            <div ng-click="minimize()">
+              <img src="/images/minimize.png" alt="" />
+            </div>
+            <div ng-click="maximize()">
+              <img src="/images/maximize.png" alt="" />
+            </div>
+            <div ng-click="close()">
+              <img src="/images/close.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="sidebar">
+            <div class="sidebar-info">
+              <div class="picture">
+                <img src="./images/picture.png" alt="" />
+              </div>
+              <div class="personal">
+                <span class="name">黎城健</span>
+                <span class="mail">1069938185@qq.com</span>
+              </div>
+            </div>
+            <div class="sidebar-search">
+              <input type="text" placeholder="查找设置" />
+              <button><img src="./images/search.png" alt="" /></button>
+            </div>
+            <div class="sidebar-menu">
+              <ul ng-init="menuList">
+                <li
+                  ng-repeat="x in menuList"
+                  ng-click="menuClick(x)"
+                  ng-class="menuAct==x.img?'act':''"
+                >
+                  <a
+                    ><div class="img">
+                      <img src="./images/{{ x.img }}.png" />
+                    </div>
+                    <span>{{x.name}}</span></a
+                  >
+                </li>
+                <span class="stressline"></span>
+              </ul>
+            </div>
+          </div>
+          <div class="page">
+            <!-- 面包屑 -->
+            <div class="page-title">
+              <!-- 根据面包屑数组生成顶部标题 -->
+              <!-- 在跳转事件中传入面包屑数组中的title、url和层级，赋予a标签的跳转事件 -->
+              <a
+                ng-repeat="x in crumbs"
+                ng-click="onJumpPage({title:x.title,url:x.url.replace('#!/','')},x.zIndex)"
+              >
+              <!-- 根据是否存在right判断是否有右箭头 -->
+                <span ng-show="{{x.right}}"> > </span> {{x.title}}</a
+              >
+            </div>
+            <div ng-view class="page-content" ng-class="{'page-tran':pageTran}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="node_modules/angular/angular.js"></script>
+    <script type="module" src="node_modules/angular-route/angular-route.js"></script>
+    <script type="module" src="js/echarts.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<div class="radiobox">
+  <div
+    class="radio"
+    ng-repeat="radio in $ctrl.list"
+    ng-click="click(radio.value)"
+  >
+    <input
+      class="radio-option"
+      type="radio"
+      ng-value="radio.value"
+      ng-model="$ctrl.innerValue"
+    />
+    <div class="radio-text">
+      <span class="name">{{radio.name}}</span>
+      <span class="introduce">{{radio.introduce}}</span>
+      <span class="method">{{radio.method}}</span>
+    </div>
+  </div>
+</div>

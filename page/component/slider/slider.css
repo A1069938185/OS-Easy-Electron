@@ -1,0 +1,16 @@
+.slider {
+  display: flex;
+}
+.slider-tag {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  height: 24px;
+}
+.slider-tag span {
+  font-size: 14px;
+  margin-right: 8px;
+}
+.slider-tag img {
+  height: 100%;
+}

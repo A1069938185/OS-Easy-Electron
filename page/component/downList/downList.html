@@ -1,0 +1,9 @@
+<div class="select">
+  <select
+    ng-click="click($event)"
+    ng-class="$ctrl.size"
+    ng-model="selected"
+    ng-change="change(selected)"
+    ng-options=" x[$ctrl.value] as x[$ctrl.key] for x in $ctrl.data"
+  ></select>
+</div>

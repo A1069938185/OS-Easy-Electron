@@ -1,0 +1,18 @@
+<div class="power">
+  <div class="power-show">
+    <span class="percentage">{{power+'%'}}</span>
+    <div class="battery" style="--w : {{value}}">
+    </div>
+  </div>
+  <div class="power-trend">
+    <power-histogram></power-histogram></div>
+</div>
+<div class="option">
+  <p>自动规则</p>
+  <card
+    card="card"
+    ng-click="onJumpPage(card.jump.crumbs,card.jump.z)"
+    ng-repeat="card in cardList0"
+  ></card>
+</div>
+<help></help>

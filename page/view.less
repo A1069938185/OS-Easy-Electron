@@ -1,0 +1,75 @@
+@import url(./windows-update/windows-update.less);
+@import url(./system/system.less);
+.headcard {
+  width: 98%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  &-img {
+    height: 75px;
+    min-width: 75px;
+    position: relative;
+    img {
+      height: 100%;
+    }
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+    .text {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .paratext {
+      font-size: 14px;
+      color: gray;
+    }
+    .affect {
+      font-size: 12px;
+      color: rgb(65, 65, 231);
+      cursor: pointer;
+    }
+  }
+  &-more {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &_btn {
+      width: 90px;
+      height: 30px;
+      background-color: rgb(3, 60, 247);
+      color: aliceblue;
+      cursor: pointer;
+      border-radius: 4px;
+      &:active {
+        box-shadow: 1px 1px 1px gainsboro inset;
+      }
+    }
+    &_details{
+      display: flex;
+      align-items: center;
+      .icon{
+        width: 20px;
+        height: 20px;
+        margin-right: 16px;
+        img{
+          height: 100%;
+        }
+      }
+      .details{
+        display: flex;
+        flex-direction: column;
+        .title{
+          font-size: 14px;
+        }
+        .introduce{
+          font-size: 12px;
+          color: rgb(85, 85, 85);
+        }
+      }
+    }
+  }
+}

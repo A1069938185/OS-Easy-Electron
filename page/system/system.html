@@ -1,0 +1,28 @@
+<div class="headcard">
+  <div class="headcard-img">
+    <img class="img1" src="./images/mycomputer.png" />
+  </div>
+  <div class="headcard-info">
+    <span class="text">电脑的名称</span>
+    <span class="paratext">电脑的型号</span>
+    <span class="affect">重命名</span>
+  </div>
+  <div class="headcard-more">
+    <div class="headcard-more_details">
+      <div class="icon">
+        <img src="./images/update-status.png" />
+      </div>
+      <div class="details">
+        <span class="title">Windows更新</span>
+        <span class="introduce">上次检查时间:11小时前</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="option">
+  <card
+    card="card"
+    ng-click="onJumpPage(card.jump.crumbs,card.jump.z)"
+    ng-repeat="card in cardList"
+  ></card>
+</div>

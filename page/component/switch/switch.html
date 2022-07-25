@@ -1,0 +1,8 @@
+<div class="switch">
+  <label ng-if="!$ctrl.label">{{switch?'开':'关'}}</label>
+  <label ng-else>{{switch?$ctrl.label[0]:$ctrl.label[1]}}</label>
+  <div class="switch-box">
+    <input type="checkbox" ng-checked="switch" ng-model="switch" ng-change="send2parent(switch)"/>
+    <div class="trigger"></div>
+  </div>
+</div>
